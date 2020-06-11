@@ -1,0 +1,26 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    cin>>n;
+    int len=((n-1)*2)+1;
+    for(int row = 0; row < len; row++)
+    {
+        for(int col = 0; col < len; col++)
+        {
+            int m = min(row, col);
+            m = min(m, len - row - 1);
+            m = min(m, len - col - 1);
+           cout<<n-m<<" ";
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
